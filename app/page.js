@@ -5,7 +5,7 @@ import Hero from "./component/hero";
 import Navbar from "./component/navbar/navbar";
 import RevealTextComponent from "./component/reveal";
 import Countdown from "./component/countdown";
-import Banner from "./component/banner";
+
 import ContactForm from "./component/contactForm";
 
 import StickyBanner from "./component/stickyBanner";
@@ -33,8 +33,9 @@ export default function Home() {
       <Navbar />
       <div className="bg"></div>
       <Hero />
+
       <RevealTextComponent>
-        <div className="my-20 text-center text-xl ">
+        <div className="my-20 text-center text-xl">
           <h1>Launch day</h1>
         </div>
       </RevealTextComponent>
@@ -44,16 +45,10 @@ export default function Home() {
       </RevealTextComponent>
 
       <RevealTextComponent>
-        {/* <Banner /> */}
         <ContactForm />
       </RevealTextComponent>
 
-      {/* <BackgroundBeamsDemo /> */}
       <StickyBanner />
-
-   
-
-      
     </main>
   );
 }

@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Toast from "../ui/toast";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -8,7 +7,7 @@ const ContactForm = () => {
     email: "",
     message: "",
   });
-  const [toast, setToast] = useState({ show: false, message: '' });
+  const [toast, setToast] = useState({ show: false, message: "" });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,9 +16,9 @@ const ContactForm = () => {
   const showToast = (type, message) => {
     setToast({ show: true, message });
     setTimeout(() => {
-      setToast({ show: false, message: '' });
+      setToast({ show: false, message: "" });
     }, 3000); // Hide after 3 seconds
- };
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,12 +33,11 @@ const ContactForm = () => {
     });
 
     if (response.ok) {
-      showToast('success', 'Message sent successfully.');
-      setFormData({ name: '', email: '', message: '' });
+      showToast("success", "Message sent successfully.");
+      setFormData({ name: "", email: "", message: "" });
     } else {
-      showToast('info', 'New mail arrived.');
+      showToast("info", "Something went wrong please try again");
     }
-
   };
 
   return (
@@ -47,11 +45,16 @@ const ContactForm = () => {
       {/* <!-- Gradients --> */}
 
       {toast.show && (
-        <div className={`toast toast-end ${toast.type === 'success' ? 'alert alert-success' : 'alert alert-info'}`}>
+        <div
+          className={`toast toast-end ${
+            toast.type === "success"
+              ? "alert alert-success"
+              : "alert alert-error"
+          }`}
+        >
           <span>{toast.message}</span>
         </div>
       )}
-
 
       <div
         aria-hidden="true"
@@ -104,6 +107,7 @@ const ContactForm = () => {
                       type="email"
                       name="email"
                       onChange={handleChange}
+                      value={formData.email}
                       className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
                       placeholder="Enter your email address"
                       required

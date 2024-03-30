@@ -38,3 +38,39 @@
 .body_section_one{
   height: 76vh;
 }
+
+
+
+/* TOAST COMPONENT STYLE */
+.toast {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+ }
+ 
+ .toast-end {
+  animation: toast-end 0.5s forwards;
+ }
+ 
+ @keyframes toast-end {
+   0% {
+     opacity: 0;
+     transform: translate(-50%, -50%) scale(0.9);
+  }
+   100% {
+     opacity: 1;
+     transform: translate(-50%, -50%) scale(1);
+  }
+ }
+ 

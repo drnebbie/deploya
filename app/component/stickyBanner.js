@@ -1,5 +1,6 @@
+import React from "react";
 import { BackgroundBeamsDemo } from "./BackgroundBeamsDemo";
-import Banner from "./banner"
+
 
 const StickyBanner = () => {
   return (

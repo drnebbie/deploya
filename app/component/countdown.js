@@ -1,6 +1,6 @@
 'use client'
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 // NOTE: Change this date to whatever date you want to countdown to :)
 const COUNTDOWN_FROM = "04/20/2024";
@@ -69,7 +69,7 @@ const CountdownItem = ({ num, text }) => {
             animate={{ y: "0%" }}
             exit={{ y: "-100%" }}
             transition={{ ease: "backIn", duration: 0.75 }}
-            className="block text-2xl md:text-4xl lg:text-6xl xl:text-7xl text-black font-medium"
+            className="block text-2xl md:text-4xl lg:text-6xl xl:text-7xl text-slate-500 font-medium"
           >
             {num}
           </motion.span>
